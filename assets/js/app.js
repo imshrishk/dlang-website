@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         showLoaders();
         
-        const response = await fetch('/data/benchmarks.json');
+        const response = await fetch(`${window.BASE_URL}/data/benchmarks.json`)
         
         if (!response.ok) {
           throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);

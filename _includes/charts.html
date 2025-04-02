@@ -46,6 +46,6 @@
   
   <script>
     //window.BASE_URL = "{{ site.baseurl }}";
-    window.USE_SAMPLE_DATA = true; //for sample data
+    window.USE_SAMPLE_DATA = "{{ site.baseurl | replace: '//', '/' }}"; //for sample data
   </script>
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>

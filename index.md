@@ -1,3 +1,6 @@
+---
+layout: default
+---
 
 <div class="header">
   <div class="container">
@@ -26,13 +29,10 @@
       </div>
     </div>
     
-    <div class="benchmark-wrapper" id="benchmarks">
+    <div class="benchmark-wrapper grid-view" id="benchmarks">
       <!-- Benchmark cards will be inserted here by JavaScript -->
     </div>
   </div>
-
-
-
 </div>
 
 <footer class="footer">

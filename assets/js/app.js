@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         showLoaders();
         
-        // Use baseurl path for data loading
-        const response = await fetch(window.location.pathname + '_data/benchmarks.json');
+        const response = await fetch('/data/benchmarks.json');
         
         if (!response.ok) {
           throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);
@@ -47,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!allData || !Array.isArray(allData) || allData.length === 0) {
           throw new Error('No benchmark data available');
         }
-        
-        // Extract relevant data from the structure
-        allData = allData.filter(item => item && typeof item === 'object' && item.timestamp);
         
         // Sort data by timestamp (newest first for the list view)
         allData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));

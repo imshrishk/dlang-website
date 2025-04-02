@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadData() {
       try {
         showLoaders();
+
+        const dataPath = window.USE_SAMPLE_DATA 
+            ? '/data/sample_benchmarks.json'
+            : '/data/benchmarks.json';
         
         const response = await fetch(`${window.BASE_URL}/data/benchmarks.json`)
         

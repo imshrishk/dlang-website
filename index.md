@@ -10,6 +10,9 @@ layout: default
 </div>
 
 <div class="container">
+    <div class="test-banner">
+    WARNING: Currently displaying sample test data
+    </div>
   {% include charts.html %}
   
   <div class="benchmarks-section">

@@ -49,4 +49,3 @@ layout: default
     </div>
   </div>
 </footer>
-</document_content>

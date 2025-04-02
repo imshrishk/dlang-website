@@ -1,5 +1,5 @@
 title: D Language Compiler Benchmarks
-baseurl: "/dlang-website"
+baseurl: ""
 url: "https://imshrishk.github.io"
 markdown: kramdown
 theme: minima

@@ -509,3 +509,138 @@
       height: 250px;
     }
   }
+
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+    gap: 1.5rem;
+  }
+  
+  .list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .list-view .benchmark-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+      "header header"
+      "time memory"
+      "timestamp timestamp";
+    gap: 0.75rem;
+  }
+  
+  .list-view .benchmark-header {
+    grid-area: header;
+    margin-bottom: 0;
+  }
+  
+  .list-view .metric:nth-child(2) {
+    grid-area: time;
+    border-bottom: none;
+  }
+  
+  .list-view .metric:nth-child(3) {
+    grid-area: memory;
+    border-bottom: none;
+  }
+  
+  .list-view .timestamp {
+    grid-area: timestamp;
+    margin-top: 0;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    padding: 1rem;
+    background-color: rgba(239, 68, 68, 0.1);
+    border-radius: var(--radius);
+    color: var(--danger);
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .error-message p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .error-message small {
+    color: var(--gray-500);
+  }
+  
+  /* Improved Loading Spinner */
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(99, 102, 241, 0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .chart-card {
+      padding: 1rem;
+    }
+    
+    .chart-container {
+      height: 250px;
+    }
+    
+    .benchmark-card {
+      padding: 1.25rem;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --light: #0f172a;
+      --dark: #f8fafc;
+      --gray-100: #1e293b;
+      --gray-200: #334155;
+      --gray-300: #475569;
+      --gray-400: #64748b;
+      --gray-500: #94a3b8;
+      --gray-700: #cbd5e1;
+      --gray-900: #f1f5f9;
+    }
+    
+    body {
+      background: var(--gray-900);
+      color: var(--light);
+    }
+    
+    .chart-card, 
+    .benchmark-card, 
+    .time-range-selector,
+    footer {
+      background: var(--gray-100);
+      color: var(--light);
+    }
+    
+    .range-btn {
+      color: var(--gray-400);
+    }
+    
+    .range-btn:hover {
+      color: white;
+    }
+    
+    .range-btn.active {
+      background: var(--primary-dark);
+    }
+    
+    .metric {
+      border-color: var(--gray-200);
+    }
+    
+    .loading-spinner {
+      background: rgba(15, 23, 42, 0.8);
+    }
+  }

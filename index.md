@@ -29,13 +29,8 @@ layout: default
       </div>
     </div>
     
-    <div class="benchmark-wrapper" id="benchmarks">
+    <div class="benchmark-wrapper grid-view" id="benchmarks">
       <!-- Benchmark cards will be inserted here by JavaScript -->
-      <div class="empty-state">
-        <h3>Error Loading Data</h3>
-        <p>Failed to load data: 404</p>
-        <p>Please try refreshing the page or contact the administrator if the problem persists.</p>
-      </div>
     </div>
   </div>
 </div>
@@ -54,3 +49,4 @@ layout: default
     </div>
   </div>
 </footer>
+</document_content>

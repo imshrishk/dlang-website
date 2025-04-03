@@ -93,5 +93,24 @@
       "mem_diff": 7.4,
       "mem_pct": "0.05%"
     }
+  },
+  {
+    "timestamp": "2025-04-03T17:32:53.641Z",
+    "pr": {
+      "number": 28,
+      "title": "chore: remove unnecessary workflows",
+      "url": "https://github.com/imshrishk/dmd/pull/28",
+      "commit": "48f65057e20224a91671a520d3b13f7f8e4f4f7a"
+    },
+    "metrics": {
+      "pr_time": 115.22,
+      "master_time": 116.193,
+      "pr_memory": 15173.3,
+      "master_memory": 15213.2,
+      "time_diff": -0.974,
+      "time_pct": "-0.84%",
+      "mem_diff": -39.9,
+      "mem_pct": "-0.26%"
+    }
   }
 ]

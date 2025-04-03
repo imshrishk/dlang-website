@@ -36,5 +36,24 @@
       "mem_diff": -10.3,
       "mem_pct": "-0.07%"
     }
+  },
+  {
+    "timestamp": "2025-04-03T15:42:28.745Z",
+    "pr": {
+      "number": 27,
+      "title": "Check 27.1",
+      "url": "https://github.com/imshrishk/dmd/pull/27",
+      "commit": "25cfac5c01a467bb12f0033fb29bb4d6c5649226"
+    },
+    "metrics": {
+      "pr_time": 116.402,
+      "master_time": 115.681,
+      "pr_memory": 15221.3,
+      "master_memory": 15223.7,
+      "time_diff": 0.722,
+      "time_pct": "0.62%",
+      "mem_diff": -2.4,
+      "mem_pct": "-0.02%"
+    }
   }
 ]

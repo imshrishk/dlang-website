@@ -7,13 +7,16 @@
         <button class="range-btn" data-range="all">All Time</button>
       </div>
     </div>
-    
+
     <div class="chart-grid">
+      <div id="chartError" class="error-message" style="display:none"></div>
       <div class="chart-card">
         <div class="chart-header">
           <h3>Compilation Time</h3>
           <div class="chart-legend">
-            <span class="legend-item"><span class="legend-color time-color"></span> Time Difference (seconds)</span>
+            <span class="legend-item">
+              <span class="legend-color time-color"></span>Time Difference (seconds)
+            </span>
           </div>
         </div>
         <div class="chart-container">
@@ -24,13 +27,17 @@
           <canvas id="timeChart"></canvas>
         </div>
       </div>
-      
+
       <div class="chart-card">
         <div class="chart-header">
           <h3>Memory Usage</h3>
           <div class="chart-legend">
-            <span class="legend-item"><span class="legend-color memory-positive"></span> Increased Memory</span>
-            <span class="legend-item"><span class="legend-color memory-negative"></span> Decreased Memory</span>
+            <span class="legend-item">
+              <span class="legend-color memory-positive"></span>Increased Memory
+            </span>
+            <span class="legend-item">
+              <span class="legend-color memory-negative"></span>Decreased Memory
+            </span>
           </div>
         </div>
         <div class="chart-container">
@@ -45,7 +52,7 @@
   </div>
   
   <script>
-    //window.BASE_URL = "{{ site.baseurl }}";
-    window.USE_SAMPLE_DATA = "{{ site.baseurl | replace: '//', '/' }}"; //for sample data
+    window.BASE_URL = "{{ site.baseurl }}";
+    window.USE_SAMPLE_DATA = false;
   </script>
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>

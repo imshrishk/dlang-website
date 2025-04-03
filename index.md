@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="header">
   <div class="container">
     <h1>D Compiler Benchmarks</h1>
@@ -10,9 +9,9 @@ layout: default
 </div>
 
 <div class="container">
-    <div class="test-banner">
+  <div class="test-banner">
     WARNING: Currently displaying sample test data
-    </div>
+  </div>
   {% include charts.html %}
   
   <div class="benchmarks-section">
@@ -31,9 +30,12 @@ layout: default
         </button>
       </div>
     </div>
-    
     <div class="benchmark-wrapper" id="benchmarks">
       <!-- Benchmark cards will be inserted here by JavaScript -->
+      <div class="loading-spinner" id="benchmarksLoader">
+        <div class="spinner"></div>
+        <p>Loading benchmark data...</p>
+      </div>
     </div>
   </div>
 </div>
@@ -45,6 +47,7 @@ layout: default
         <a href="https://dlang.org" class="footer-link">D Language</a>
         <a href="https://github.com/dlang/dmd" class="footer-link">DMD Repository</a>
         <a href="https://github.com/dlang/dmd/pulls" class="footer-link">Pull Requests</a>
+        <a href="https://dlang.org/documentation.html" class="footer-link">Documentation</a>
       </div>
       <div class="copyright">
         © 2025 D Language Foundation
@@ -52,3 +55,4 @@ layout: default
     </div>
   </div>
 </footer>
+<script src="{{ '/assets/js/data-loader.js' | relative_url }}"></script>

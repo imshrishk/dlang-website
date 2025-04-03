@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D Language Compiler Benchmarks</title>
+    <meta
+      name="description"
+      content="Performance metrics for D compiler pull requests"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dlang-website/assets/css/style.css" />
+    <!-- Set global variables before any other scripts -->
+    <script>
+      window.BASE_URL = "/dlang-website";
+      window.addEventListener('error', function (e) {
+        console.error('Global error caught:', e.error || e.message);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="header">
+  <div class="container">
+    <h1>D Compiler Benchmarks</h1>
+    <p>Performance metrics and comparison for D compiler pull requests</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="test-banner">
+    WARNING: Currently displaying sample test data
+  </div>
+  <div class="chart-section">
+    <div class="chart-controls">
+      <div class="time-range-selector">
+        <button class="range-btn active" data-range="7">7 Days</button>
+        <button class="range-btn" data-range="30">30 Days</button>
+        <button class="range-btn" data-range="90">90 Days</button>
+        <button class="range-btn" data-range="all">All Time</button>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <div id="chartError" class="error-message" style="display:none"></div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Compilation Time</h3>
+          <div class="chart-legend">
+            <span class="legend-item">
+              <span class="legend-color time-color"></span>Time Difference (seconds)
+            </span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <div class="loading-spinner" id="timeChartLoader">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+          </div>
+          <canvas id="timeChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Memory Usage</h3>
+          <div class="chart-legend">
+            <span class="legend-item">
+              <span class="legend-color memory-positive"></span>Increased Memory
+            </span>
+            <span class="legend-item">
+              <span class="legend-color memory-negative"></span>Decreased Memory
+            </span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <div class="loading-spinner" id="memoryChartLoader">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+          </div>
+          <canvas id="memoryChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.BASE_URL = "/dlang-website";
+    window.USE_SAMPLE_DATA = false;
+  </script>
+  <script src="/dlang-website/assets/js/app.js"></script>
+
+  
+  <div class="benchmarks-section">
+    <div class="section-header">
+      <h2>Recent Benchmarks</h2>
+      <div class="view-options">
+        <button class="view-btn active" data-view="grid" title="Grid View">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zm-9 9h7v7H4v-7zm9 0h7v7h-7v-7z" />
+          </svg>
+        </button>
+        <button class="view-btn" data-view="list" title="List View">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 4h18v4H3V4zm0 6h18v4H3v-4zm0 6h18v4H3v-4z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="benchmark-wrapper" id="benchmarks">
+      <!-- Benchmark cards will be inserted here by JavaScript -->
+      <div class="loading-spinner" id="benchmarksLoader">
+        <div class="spinner"></div>
+        <p>Loading benchmark data...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://dlang.org" class="footer-link">D Language</a>
+        <a href="https://github.com/dlang/dmd" class="footer-link">DMD Repository</a>
+        <a href="https://github.com/dlang/dmd/pulls" class="footer-link">Pull Requests</a>
+        <a href="https://dlang.org/documentation.html" class="footer-link">Documentation</a>
+      </div>
+      <div class="copyright">
+        © 2025 D Language Foundation
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/dlang-website/assets/js/data-loader.js"></script>
+
+
+  </body>
+</html>
